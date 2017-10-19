@@ -98,10 +98,10 @@ static char *task_state_str[] = {
 
 /* see arch/arm/include/armv7-m/irq_cmnvector.h */
 static const struct stack_register_offset nuttx_stack_offsets_cortex_m[] = {
-	{ 0x28, 32 },		/* r0   */
-	{ 0x2c, 32 },		/* r1   */
-	{ 0x30, 32 },		/* r2   */
-	{ 0x34, 32 },		/* r3   */
+	{ 0x2c, 32 },		/* r0   */
+	{ 0x30, 32 },		/* r1   */
+	{ 0x34, 32 },		/* r2   */
+	{ 0x38, 32 },		/* r3   */
 	{ 0x08, 32 },		/* r4   */
 	{ 0x0c, 32 },		/* r5   */
 	{ 0x10, 32 },		/* r6   */
@@ -110,16 +110,16 @@ static const struct stack_register_offset nuttx_stack_offsets_cortex_m[] = {
 	{ 0x1c, 32 },		/* r9   */
 	{ 0x20, 32 },		/* r10  */
 	{ 0x24, 32 },		/* r11  */
-	{ 0x38, 32 },		/* r12  */
+	{ 0x3c, 32 },		/* r12  */
 	{   0,  32 },		/* sp   */
-	{ 0x3c, 32 },		/* lr   */
-	{ 0x40, 32 },		/* pc   */
-	{ 0x44, 32 },		/* xPSR */
+	{ 0x40, 32 },		/* lr   */
+	{ 0x44, 32 },		/* pc   */
+	{ 0x48, 32 },		/* xPSR */
 };
 
 
 static const struct rtos_register_stacking nuttx_stacking_cortex_m = {
-	0x48,                                   /* stack_registers_size */
+	0x4c,                                   /* stack_registers_size */
 	-1,                                     /* stack_growth_direction */
 	17,                                     /* num_output_registers */
 	0,                                      /* stack_alignment */
